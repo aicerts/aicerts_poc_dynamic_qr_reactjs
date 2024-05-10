@@ -1,0 +1,159 @@
+.certificate-template {
+    background-size: cover;
+    width: 1200px;
+    height: 856px;
+    font-family: 'Kanit', sans-serif;
+
+    &#template-1 {
+        background-image: url(/backgrounds/certifiicate-template-1-bg.svg);
+        padding: 8.125em 0 5.625em;
+    }
+
+    &#template-2 {
+        background-image: url(/backgrounds/certifiicate-template-2-bg.svg);
+        padding: 8.125em 0 5.625em;
+    }
+
+    &#template-3 {
+        background-image: url(/backgrounds/certifiicate-template-3-bg.svg);
+        padding: 60px 0 5.625em;
+
+        .badge-position {
+            bottom: 230px;
+        }
+
+        .bottom-info {
+            bottom: 190px;
+        }
+    }
+
+    .hero-logo {
+        width: 344px;
+        height: 48px;
+    }
+
+    .hero-info {
+        color: #4D4D4D;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: 0.04em;
+        margin: 44px 0 20px;
+    }
+
+    .issued-to {
+        color: #0C393D;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+    }
+
+    .hero-message {
+        color: #4D4D4D;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 39px;
+        letter-spacing: 0.01em;
+        margin: 22px 0;
+    }
+
+    .course-name {
+        color: #0C393D;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        letter-spacing: 0.04em;
+
+    }
+
+    .issued-by {
+        width: 355px;
+        margin: 60px auto 0;
+
+        .signature {
+            width: 217px;
+            height: 58px;
+            margin: auto;
+        }
+
+        hr {
+            height: 2px;
+            border: 1px solid #B2B2B2;
+            margin: 20px 0 8px;
+        }
+
+        .issuer-info {
+
+            .issuer-name {
+                color: $black;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 27px;
+                letter-spacing: 0em;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 7px;
+                    right: -10px;
+                    width: 2px;
+                    height: 16px;
+                    background-color: $black;
+                }
+            }
+
+            .issuer-designation {
+                color: #707070;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 27px;
+                letter-spacing: 0.01em;
+            }
+        }
+    }
+
+    .badge-position {
+        left: 165px;
+        bottom: 154px;
+
+        .ai-badge-logo {
+            position: relative;
+            width: 171px;
+            height: 172px;
+        }
+    }
+
+    .bottom-info {
+        bottom: 80px;
+
+        .certificate-info {
+            color: $black;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: left;
+            letter-spacing: 0.03px;
+            text-transform: capitalize;
+        }
+
+        span {
+            color: #4D4D4D;
+            width: 2px;
+            display: block;
+            margin: 0 10px;        
+        }
+    }
+
+    .qr-details {
+        position: absolute;
+        right: 165px;
+        bottom: 230px;
+
+        img {
+            width: 171px;
+            height: 172px;
+        }
+    }
+}

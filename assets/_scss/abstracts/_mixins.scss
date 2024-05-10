@@ -1,0 +1,49 @@
+// Text truncate
+@mixin truncate($lines: 1) {
+    $display: block;
+    $white-space: nowrap;
+  
+    @if $lines > 1 {
+      $display: -webkit-box;
+      $white-space: normal;
+    }
+  
+    display: $display;
+    max-width: 100%;
+    white-space: $white-space;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+
+// Spacing
+// Define a mixin for dynamic padding
+@mixin dynamic-padding($padding) {
+  padding: ($padding + px);
+
+  @media (min-width: $large-min) and (max-width: $large-max) {
+    padding: round($large-max / 1920 * $padding);
+  }
+
+  @media (min-width: $medium-min) and (max-width: $medium-max) {
+    padding: round($medium-max / 1920 * $padding);
+  }
+
+  @media (min-width: $small-min) and (max-width: $small-max) {
+    padding: round($small-max / 1920 * $padding);
+  }
+
+  @media (min-width: $laptop-min) and (max-width: $laptop-max) {
+    padding: round($laptop-max / 1920 * $padding);
+  }
+
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    padding: round($tablet-max / 1920 * $padding);
+  }
+
+  @media (min-width: $mobile-min) and (max-width: $mobile-max) {
+    padding: $padding / 2;
+  }
+}

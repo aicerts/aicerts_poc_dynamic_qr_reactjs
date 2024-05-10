@@ -1,0 +1,19 @@
+html, body {
+  font-family: $font-family;
+}
+
+// Header Styles
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin-bottom: 0;
+
+  a {
+    font-weight: inherit;
+  }
+}
+
+// Text Styles
+em { font-style: italic; }
+strong { font-weight: bold; }
+.uppercase { text-transform: uppercase; }  
+
