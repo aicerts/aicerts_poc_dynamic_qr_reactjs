@@ -92,7 +92,7 @@ const SearchTab = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <div className='search-icon-container' onClick={handleSearch}>
-          <img src="/icons/search.svg" alt='search'/>
+          <Image width={10} height={10} src="/icons/search.svg" alt='search'/>
         </div>
       </div>
 
@@ -130,7 +130,7 @@ const SearchTab = () => {
             alt='Loader'
           />
           </div>
-          <p>Please don't reload the Page. It may take a few minutes.</p>
+          <p>Please dont reload the Page. It may take a few minutes.</p>
         </Modal.Body>
       </Modal>
 
