@@ -744,3 +744,76 @@
 .batchDashboard {
     transform: translateY(-80%);
 }
+
+.gallery-search-container{
+    display: flex;
+flex-direction: row;
+align-items: center;
+text-align: center;
+justify-content: center;
+span{
+font-family: $font-family;
+font-size: 17px;
+font-weight: 600;
+line-height: 21.94px;
+text-align: left;
+
+}
+input{
+width: 398px;
+height: 40px;
+margin-left: 10px;
+border-radius: 10px;
+padding-left: 10px;
+font-family: $font-family;
+font-size: 16px;
+border: 1px solid #D5DDEA ;
+}
+
+.search-icon-container{
+width: 40px;
+height: 40px;
+border-radius: 10px;
+margin-left: 10px;
+background: #CFA935;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+img{
+width: 18px;
+height: 18px;
+
+
+}
+}
+}
+
+.certificate-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .certificate-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .certificate-name {
+    flex: 1;
+  }
+  
+  .download-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .download-link:hover {
+    text-decoration: underline;
+  }
+  

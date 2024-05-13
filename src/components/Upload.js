@@ -6,6 +6,7 @@ import { Container, Row, Col, Card, Modal } from 'react-bootstrap';
 import Image from 'next/legacy/image';
 import { useRouter } from 'next/router'; 
 import fileDownload from 'react-file-download';
+import SearchTab from "./SearchTab";
 const iconUrl = process.env.NEXT_PUBLIC_BASE_ICON_URL;
 const userUrl = process.env.NEXT_PUBLIC_BASE_URL_USER;
 
@@ -275,8 +276,12 @@ const handleFileBatchChange = (event) => {
               <li className="nav-item" role="presentation">
                 <button className={`nav-link ${activeTab === 'batch' ? 'active' : ''}`} id="batch-tab" data-bs-toggle="tab" data-bs-target="#batch" type="button" role="tab" aria-controls="batch" aria-selected={activeTab === 'batch'} onClick={() => handleTabClick('batch')}>Batch</button>
               </li>
+              <li className="nav-item" role="presentation">
+                <button className={`nav-link ${activeTab === 'search' ? 'active' : ''}`} id="search-tab" data-bs-toggle="tab" data-bs-target="#search" type="button" role="tab" aria-controls="search" aria-selected={activeTab === 'search'} onClick={() => handleTabClick('search')}>Search</button>
+              </li>
             </ul>
-        <h3 className='page-title'>{activeTab} Issuance</h3>
+            {activeTab?.toLowerCase() !== "search" && (<h3 className='page-title'>{activeTab} Issuance</h3>)
+            }
             <div className="tab-content" id="uploadTabContent">
               {/* Single Tab */}
               <div className={`tab-pane fade ${activeTab === 'single' ? 'show active' : ''}`} id="single" role="tabpanel" aria-labelledby="single-tab">
@@ -331,6 +336,10 @@ const handleFileBatchChange = (event) => {
                                         )}
                 </div>
               </div>
+            {/* Search tab */}
+              <div className={`tab-pane fade ${activeTab === 'search' ? 'show active' : ''}`} id="batch" role="tabpanel" aria-labelledby="batch-tab">
+            <SearchTab/>
+              </div>
             </div>
           </div>
         </Col>
@@ -370,8 +379,14 @@ const handleFileBatchChange = (event) => {
                 )}
                 {success && (
                     <>
-                        <div className='success-icon'>
+                        <div className='error-icon'>
                             {/* Use a success icon */}
+                            <Image
+                  src="/icons/check-mark.svg"
+                  layout='fill'
+                  objectFit='contain'
+                  alt='Loader'
+                />
                         </div>
                         <h3 style={{ color: 'green' }}>{success}</h3>
                         <button className='success' onClick={handleCloseSuccess}>Ok</button>
