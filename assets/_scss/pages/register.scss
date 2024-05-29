@@ -1,0 +1,121 @@
+.register {
+    padding: 0 0 24px;
+
+    .title {
+        color: #2F3847;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+
+    .register-form {
+        .card {
+            border: none;
+            border: 1px solid #BFC0C2;
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+            
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+
+            .card-body {
+                padding: 0;
+
+                .card-title {
+                    color: #2F3847;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    background: #F3F3F3;
+                    padding: 18px 30px;
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    -ms-border-radius: 0;
+                    -o-border-radius: 0;
+                }
+
+                .input-elements {
+                    padding: 18px 30px;
+
+                    .form-label {
+                        color: #5A677E;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+
+        .golden {
+            margin-top: 40px;
+        }
+    }
+
+    @media (min-width: $large-min) and (max-width: $large-max) {
+        .title {
+            font-size: 28px;
+        }
+    }
+
+    // 1440
+    @media (min-width: $medium-min) and (max-width: $medium-max) {
+        .title {
+            font-size: 28px;
+        }
+    }
+
+    // 1366
+    @media (min-width: $small-min) and (max-width: $small-max) {
+        .title {
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .register-form {
+            .card {                
+                &:not(:first-child) {
+                    margin-top: 20px;
+                }
+    
+                .card-body {
+                    padding: 0;
+    
+                    .card-title {
+                        font-size: 18px;
+                        padding: 12px 20px;
+                    }
+    
+                    .input-elements {
+                        padding: 12px 20px;
+    
+                        .form-label {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+    
+            .golden {
+                padding: 12px 60px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    // 1280
+    @media (min-width: $laptop-min) and (max-width: $laptop-max) {
+        .title {
+            font-size: 24px;
+        }
+    }
+}

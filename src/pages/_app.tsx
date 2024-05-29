@@ -3,11 +3,16 @@ import "../../assets/css/styles.scss";
 import React from 'react';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { getAuth } from 'firebase/auth';
+// @ts-ignore: Implicit any for children prop
+import { app } from "../config/firebaseConfig"
+
 import Head from 'next/head';
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   const isLoginPage = router.pathname === '/';
-  
+   // @ts-ignore: Implicit any for children prop
+   const auth = getAuth(app)
   return (
     <>
      <Head>

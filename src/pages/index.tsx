@@ -1,16 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import Navigation from '@/app/navigation';
-import Upload from '@/components/Upload';
+import React from 'react'
+import Login from './login'
+import NavigationLogin from '../app/navigation-login';
+
 const LoginPage = () => {
-    return (
-        <div className='container-fluid'>  
-            <Navigation />
-            <div className="container">
-                <Upload />
-            </div>
-        </div>
-    );
+  return (
+    <div className='login-page'>  
+    <NavigationLogin />
+    <div className="container">
+        <Login />
+    </div>
+</div>
+  )
 }
 
 export default LoginPage;
