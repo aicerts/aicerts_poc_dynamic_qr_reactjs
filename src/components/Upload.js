@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import fileDownload from 'react-file-download';
 import SearchTab from "./SearchTab";
 const iconUrl = process.env.NEXT_PUBLIC_BASE_ICON_URL;
-const userUrl = process.env.NEXT_PUBLIC_BASE_URL_USER;
+const adminUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 
 const Upload = () => {
@@ -168,7 +168,7 @@ const handleFileBatchChange = (event) => {
         formData.append('zipFile', selectedFile);
 
         // Make API call
-        const response = await fetch(`${userUrl}/api/bulk-single-issue`, {
+        const response = await fetch(`${adminUrl}/api/bulk-single-issue`, {
             method: 'POST',
             body: formData
         }
@@ -218,7 +218,7 @@ const handleFileBatchChange = (event) => {
         formData.append('zipFile', selectedBatchFile);
 
         // Make API call
-        const response = await fetch(`${userUrl}/api/bulk-batch-issue`, {
+        const response = await fetch(`${adminUrl}/api/bulk-batch-issue`, {
             method: 'POST',
             body: formData
         }
