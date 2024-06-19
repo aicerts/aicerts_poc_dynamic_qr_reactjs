@@ -6,7 +6,7 @@ import Link from 'next/link';
 import CopyrightNotice from '../app/CopyrightNotice';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth"
 import { useRouter } from 'next/router';
-const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const apiUrl = process.env.NEXT_PUBLIC_BASE_URL_USER;
 
 const Login = () => {
   const router = useRouter();

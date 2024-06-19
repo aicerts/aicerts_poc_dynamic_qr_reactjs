@@ -12,6 +12,11 @@ const Navigation = () => {
   const auth = getAuth()
   const isUserLoggedIn = useRef(false); // Use useRef instead of a variable
   const [token, setToken] = useState(null);
+  const [userDetail, setUserDetail] = useState({
+    organization: '',
+    name: '',
+    certificatesIssued: ""
+  });
   const [formData, setFormData] = useState({
     organization: '',
     name: '',
@@ -35,11 +40,13 @@ const Navigation = () => {
       // If token is available, set it in the state
       setToken(storedUser.JWTToken);
       fetchData(storedUser.email);
+      setUserDetail(storedUser.name);
 
     } else {
       // If token is not available, redirect to the login page
       // router.push('/');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 // @ts-ignore: Implicit any for children prop
   const fetchData = async (email) => {
@@ -84,7 +91,7 @@ useEffect(() => {
     // If token is not available, redirect to the login page
     // router.push('/');
   }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
   useEffect(() => {
 
@@ -124,7 +131,7 @@ useEffect(() => {
 
     router.push('/');
   };
-  const routesWithLogoutButton = ['/issue-poc', '/download'];
+  const routesWithLogoutButton = ['/issue-poc', '/download', '/search'];
   
   return (
     <>
@@ -145,7 +152,7 @@ useEffect(() => {
           {routesWithLogoutButton.includes(router.pathname) && (
           <Navbar.Brand>
             <div className='nav-list'>
-              <Link onClick={()=>{handleClickTab(0)}} className={`nav-item ${selectedTab===0?"tab-golden":""}`} href="/dashboard">
+              <Link onClick={()=>{handleClickTab(0)}} className={`nav-item ${selectedTab===0?"tab-golden":""}`} href="/issue-poc">
              Issue
               </Link>
               <Link onClick={()=>{handleClickTab(1)}} className={`nav-item ${selectedTab===1?"tab-golden":""}`} href="/search">
@@ -164,8 +171,10 @@ useEffect(() => {
                 align={{ md: 'end' }}
                 title={
                   <div className='picture'>
+                    
                     <span>
-                      {formData?.name?.split(' ')?.slice(0, 2)?.map(word => word[0])?.join('')}
+                      
+                      {userDetail?.name?.split(' ')?.slice(0, 2)?.map(word => word[0])?.join('')}
                     </span>
 
                     {/* <div className='dropdown-arrow'>

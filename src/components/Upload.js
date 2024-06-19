@@ -269,17 +269,20 @@ const handleFileBatchChange = (event) => {
         <Col xs={12} md={8}>
           <div className='bulk-upload'>
             {/* Bootstrap tabs */}
-            <ul className="nav nav-tabs" id="uploadTab" role="tablist">
-              <li className="nav-item" role="presentation">
-                <button className={`nav-link ${activeTab === 'single' ? 'active' : ''}`} id="single-tab" data-bs-toggle="tab" data-bs-target="#single" type="button" role="tab" aria-controls="single" aria-selected={activeTab === 'single'} onClick={() => handleTabClick('single')}>Single</button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button className={`nav-link ${activeTab === 'batch' ? 'active' : ''}`} id="batch-tab" data-bs-toggle="tab" data-bs-target="#batch" type="button" role="tab" aria-controls="batch" aria-selected={activeTab === 'batch'} onClick={() => handleTabClick('batch')}>Batch</button>
-              </li>
-              <li className="nav-item" role="presentation">
+            <div className='admin-button-container'>
+              <span onClick={() => handleTabClick('single')} className={`btn ${activeTab === 'single' ? 'btn-golden' : ''}`}>
+                Single
+              </span>
+          <span className="vertical-line"></span>
+
+              <span onClick={() => handleTabClick('batch')} className={`btn ${activeTab === 'batch' ? 'btn-golden' : ''}`}>
+              Batch
+              </span>
+            </div>
+
+              {/* <li className="nav-item" role="presentation">
                 <button className={`nav-link ${activeTab === 'search' ? 'active' : ''}`} id="search-tab" data-bs-toggle="tab" data-bs-target="#search" type="button" role="tab" aria-controls="search" aria-selected={activeTab === 'search'} onClick={() => handleTabClick('search')}>Search</button>
-              </li>
-            </ul>
+              </li> */}
             {activeTab?.toLowerCase() !== "search" && (<h3 className='page-title'>{activeTab} Issuance</h3>)
             }
             <div className="tab-content" id="uploadTabContent">

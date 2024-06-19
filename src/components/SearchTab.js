@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
-const userUrl = process.env.NEXT_PUBLIC_BASE_URL_USER;
+const adminUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const SearchTab = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +33,7 @@ const SearchTab = () => {
       return;
     }
 
-    fetch(`${userUrl}/api/get-bulk-files`, {
+    fetch(`${adminUrl}/api/get-bulk-files`, {
       method: 'POST',
       body: JSON.stringify({ search: searchQuery, category: searchMode }),
       headers: {

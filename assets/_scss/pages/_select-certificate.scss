@@ -179,6 +179,50 @@
         }
     }
 
+    .admin-button-container{
+        max-width: 175px;
+height: 50px;
+display: flex;
+// border-radius: 10px;
+border: 1px solid #D5DDEA;
+text-align: center;
+justify-content: center;
+align-items: center;
+.btn{
+    // width: 200px;
+height: 90%;
+font-family: $font-family;
+font-size: 17px;
+font-weight: 700;
+padding-top:9px;
+// border-radius: 0px;
+margin: 0 5px;
+color:  #5A677E;
+;
+// border: 1px solid black;
+&:hover{
+    background: #CFA935;
+
+    color: white;
+    // border-radius: 10px;
+}
+}
+
+
+  .btn-golden{
+    background: #CFA935;
+    color: white;
+    // border-radius: 10px;
+  }
+  .vertical-line {
+    border-left: 1px solid #D5DDEA;
+    height: 70%; 
+    margin: 0 2px; 
+  }
+
+
+    }
+
     .page-title {
         color: #2F3847;
         font-size: 28px;
@@ -802,6 +846,10 @@ height: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: $golden;
+    color: white;
+    font-weight: 700;
+
   }
   
   .certificate-name {
