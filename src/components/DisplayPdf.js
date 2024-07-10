@@ -7,14 +7,14 @@ import { Rnd } from 'react-rnd';
 
 const adminUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-const DisplayPdf = ({ file, scale }) => {
+const DisplayPdf = ({ file, scale, formDetails }) => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [rectangle, setRectangle] = useState({
-        x: 100 / scale,
-        y: 100 / scale,
-        width: 200 / scale,
-        height: 100 / scale
+        x: 100 ,
+        y: 100,
+        width: 130 ,
+        height: 130
     });
     const containerRef = useRef(null);
     const [error, setError] = useState("");
@@ -28,18 +28,22 @@ const DisplayPdf = ({ file, scale }) => {
     const onDocumentLoadSuccess = ({ numPages }) => {
         setNumPages(numPages);
     };
+    const formatDate = (dateString) => {
+        const [year, month, day] = dateString.split('-');
+        return `${month}/${day}/${year}`;
+    };
 
     const handleSubmit = () => {
         if (!rectangle) return;
 
         setIsLoading(true);
         const formData = new FormData();
-        formData.append("email", "basit@aicerts.io");
-        formData.append("certificateNumber", "AICERTS00112934");
-        formData.append("name", "Basit Bilal");
-        formData.append("course", "JavaScript");
-        formData.append("grantDate", "10/12/2024");
-        formData.append("expirationDate", "10/12/2025");
+        formData.append("email", formDetails.email);
+        formData.append("certificateNumber",formDetails.certificateNumber );
+        formData.append("name", formDetails.name);
+        formData.append("course", formDetails.course);
+        formData.append("grantDate", formatDate(formDetails.grantDate));
+        formData.append("expirationDate", formatDate(formDetails.expirationDate));
         formData.append("posx", Math.round(rectangle.x));
         formData.append("posy", Math.round(rectangle.y));
         const qrsize = Math.round((Math.abs(rectangle.width) + Math.abs(rectangle.height)) / 2);
@@ -152,7 +156,7 @@ const DisplayPdf = ({ file, scale }) => {
                             alt='Loader'
                         />
                     </div>
-                    <p>Please don't reload the Page. It may take a few minutes.</p>
+                    <p>Please dont reload the Page. It may take a few minutes.</p>
                 </Modal.Body>
             </Modal>
             <Modal className='loader-modal text-center' show={show} centered onHide={() => setShow(false)}>
